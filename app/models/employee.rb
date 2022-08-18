@@ -4,8 +4,8 @@ class Employee < ApplicationRecord
 
   belongs_to :manager, class_name: 'Employee', optional: true
   has_many :employees, class_name: 'Employee', foreign_key: 'manager_id'
-  has_one :restaurant, class_name: 'Restaurant', foreign_key: 'manager_id'
-  belongs_to :restaurant,  class_name: "Restaurant", foreign_key: "restaurant_id"
+  has_one :resturant, class_name: 'Resturant', foreign_key: 'manager_id'
+  belongs_to :resturant,  class_name: "Resturant", foreign_key: "resturant_id"
   validate :manager_must_be_a_manager, unless: :manager?
 
   def manager?
